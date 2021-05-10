@@ -1,0 +1,17 @@
+syntax = "proto3"; // 指定 proto 版本
+package student;
+option go_package ="../student";
+
+service StudentService{
+  rpc getById(StudentRequest) returns (Student){}
+}
+
+message StudentRequest{
+  int32  id = 1;
+}
+message Student{
+  int32 id = 1;
+  string name = 2;
+  int32  age = 3;
+
+}
